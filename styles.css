@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #ff6347;
+    background-color: rgb(39, 39, 72);
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -67,7 +67,7 @@ section {
 
 h1,
 h2 {
-    color: #ff6347;
+    color: rgb(39, 39, 72);
 }
 
 input,
@@ -81,7 +81,7 @@ select {
 }
 
 button {
-    background-color: #ff6347;
+    background-color: rgb(39, 39, 72);
     color: white;
     padding: 10px;
     border: none;
@@ -90,7 +90,7 @@ button {
 }
 
 button:hover {
-    background-color: #e5533d;
+    background-color: rgb(39, 39, 72);
 }
 
 footer {

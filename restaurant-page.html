@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Order - The Gourmet Bistro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Cuisine Finder Logo" width="100">
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h1>Discover Your Local Cuisine</h1>
+        <p>Explore all known and hidden restaurants in your area and order food easily!</p>
+    </header>
+
+    <section id="order">
+        <h2>Order Your Meal</h2>
+
+        <form id="order-form" action="payment-confirmation.html" method="POST">
+            <label for="menu-item">Select a Menu Item:</label>
+            <select id="menu-item" name="menu-item">
+                <option value="pasta">Pasta Primavera - $15</option>
+                <option value="pizza">Margherita Pizza - $12</option>
+                <option value="lasagna">Classic Lasagna - $18</option>
+                <!-- Add more menu items as needed -->
+            </select>
+
+            <label for="location">Enter Your Delivery Address:</label>
+            <input type="text" id="location" name="location" placeholder="123 Main Street, City">
+
+            <label for="payment">Payment Method:</label>
+            <select id="payment" name="payment">
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="google-pay">Google Pay</option>
+            </select>
+
+           <button type="submit"><a href="payment-confirmation.html">Place Order</a></button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 The Gourmet Bistro | Powered by Cuisine Finder</p>
+    </footer>
+</body>
+
+</html>

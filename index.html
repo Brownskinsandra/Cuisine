@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Local Restaurants</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Cuisine Finder Logo" width="100">
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h1>Discover Your Local Cuisine</h1>
+        <p>Explore all known and hidden restaurants in your area and order food easily!</p>
+    </header>
+
+    <section id="search">
+        <input type="text" placeholder="Search for restaurants or cuisines..." id="search-box"
+            oninput="searchRestaurants()">
+        <button id="search-btn" onclick="searchRestaurants()">Search</button>
+    </section>
+
+    <section id="restaurant-list">
+        <h2>Restaurants Near You</h2>
+
+        <div class="restaurant" data-name="The Gourmet Bistro">
+            <h3><a href="restaurant-page.html">The Gourmet Bistro</a></h3>
+            <p>Italian • $$ • 2.4 miles away</p>
+        </div>
+
+        <div class="restaurant" data-name="Spicy Delight">
+            <h3><a href="restaurant-page.html">Spicy Delight</a></h3>
+            <p>Indian • $$ • 3.1 miles away</p>
+        </div>
+
+        <div class="restaurant" data-name="Hidden Gem Café">
+            <h3><a href="restaurant-page.html">Hidden Gem Café</a></h3>
+            <p>Fusion • $$ • 1.2 miles away</p>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <h2>What Our Customers Say</h2>
+        <p>"The best place to find amazing local restaurants!"</p>
+        <p>"Easy to use and I love the variety!"</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <label for="service-select">Choose a service:</label>
+        <select id="service-select" onchange="displaySelectedService()">
+            <option value="">-- Select a service --</option>
+            <option value="Restaurant Listings">Food Order</option>
+            <option value="Food Delivery">Pizza & Bakery Order</option>
+            <option value="Online Payment">Home Delivery</option>
+            <option value="Restaurant Reviews">Ice Cream</option>
+            <option value="Special Offers">Special Offers and Discounts</option>
+        </select>
+        <div id="service-description" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc;">
+            <!-- This is where the selected service description will be displayed -->
+        </div>
+
+
+    <section id="about-us">
+        <h2>About Us</h2>
+        <p>We are passionate about connecting you with the best restaurants in your area. From cozy cafes to top-tier
+            bistros, we've got you covered.</p>
+    </section>
+
+    <section id="contact-us">
+        <h2>Contact Us</h2>
+        <p>Email: support@cuisinefinder.com</p>
+        <p>Phone: (123) 456-7890</p>
+    </section>
+
+    <footer>
+        <p>Powered by Cuisine Finder. Discover and order from your favorite local restaurants!</p>
+    </footer>
+
+    <script>
+        function searchRestaurants() {
+            const query = document.getElementById('search-box').value.toLowerCase();
+            const restaurants = document.querySelectorAll('.restaurant');
+            restaurants.forEach(restaurant => {
+                const name = restaurant.getAttribute('data-name').toLowerCase();
+                if (name.includes(query)) {
+                    restaurant.style.display = 'block';
+                } else {
+                    restaurant.style.display = 'none';
+                }
+            });
+        }
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links') ;
+
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
